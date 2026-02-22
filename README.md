@@ -1,27 +1,22 @@
 # SeoPractica
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Este es un proyecto para practicar la implementación de SEO, creacion de proyectos SSR CSR Y PRE-RENDER, uso de schemas, creacion de robots, sitemap.yaml
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La aplicacion se levanta usado el comando npm start, la direccion local es http://localhost:4200/
 
-## Code scaffolding
+## Lista de pagina
+    - About
+    - Contanct
+    - Home
+    - Product
+    - Blog
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Reporte
 
-## Build
+Adjunto se encuentra un reporte realizado con lightHouse y tambien un reporte breve en formato PDF para explicar la decisiones que se tomaron a la hora de realizar el proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Uso de Schemas
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Se realizan 3 tipos de schemas uno de forma general para incluir información relevante, otro schemas para productos y el ultimo para articulos usados en el blog, cada uno se activa al seleccionar ya sea un proyecto o un articulo
