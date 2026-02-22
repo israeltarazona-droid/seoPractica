@@ -47,7 +47,8 @@ export class ProductDetailComponent {
 
 
   setSEO(product: any) {
-    this.title.setTitle(product.title);
+    console.log(product.brand);
+    this.title.setTitle(product.brand);
     this.meta.updateTag({
       name: 'description',
       content: product.description
@@ -55,7 +56,7 @@ export class ProductDetailComponent {
 
     this.meta.updateTag({
       property: 'og:title',
-      content: product.title
+      content: product.brand
     });
 
     this.meta.updateTag({
