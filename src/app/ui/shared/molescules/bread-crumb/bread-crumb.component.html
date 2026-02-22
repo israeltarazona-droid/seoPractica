@@ -1,0 +1,17 @@
+<div class="m-bread-crumb">
+  <div class="m-bread-crumb__inner bc-direction-xs-column" style="display: flex; justify-content: space-between;">
+    <nav class="m-bread-crumb__nav bc-breadcrumb" aria-label="Breadcrumb">
+      <ol class="m-bread-crumb__bread">
+        <li *ngFor="let i of routing">
+          <a [routerLink]="i.src">{{ i.text }}</a>
+        </li>
+      </ol>
+    </nav>
+    <div class="m-bread-crumb__date" style="align-items: center; display: flex;">
+      <p data-testid="current-date" class="bc-opensans-font-style-2-regular">{{hour() | date: 'EEEE d' | titlecase }} de {{hour() | date: 'MMMM' | titlecase}} de {{hour() | date: 'y hh:mm a' | lowercase }}</p>
+    </div>
+  </div>
+  <div class="m-bread-crumb__title-inner">
+    <h2 class="m-bread-crumb__title" data-testid="title">{{title}}</h2>
+  </div>
+</div>

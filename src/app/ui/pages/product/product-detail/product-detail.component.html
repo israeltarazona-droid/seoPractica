@@ -1,0 +1,32 @@
+<app-bread-crumb [routing]="routing" [title]="''"></app-bread-crumb>
+<section class="product-detail-container" *ngIf="product">
+  <div class="product-detail-grid">
+    <div class="product-image">
+      <img [src]="product.image" [alt]="product.name" />
+    </div>
+    <div class="product-info">
+      <h1>{{ product.name }}</h1>
+
+      <div class="meta">
+        <span class="price">{{ product.price | currency:product.currency }}</span>
+        <span class="rating">⭐ {{ product.rating }}</span>
+      </div>
+
+      <p class="description">{{ product.description }}</p>
+
+      <ul class="additional-info">
+        <li><strong>SKU:</strong> {{ product.sku }}</li>
+        <li><strong>Disponibilidad:</strong> 
+          <span [ngClass]="{'in-stock': product.availability==='InStock','out-stock': product.availability!=='InStock'}">
+            {{ product.availability === 'InStock' ? 'Disponible' : 'Agotado' }}
+          </span>
+        </li>
+        <li><strong>Marca:</strong> {{ product.brand }}</li>
+      </ul>
+      <button class="buy-btn" [disabled]="product.availability !== 'InStock'">
+        {{ product.availability === 'InStock' ? 'Comprar' : 'Agotado' }}
+      </button>
+    </div>
+  </div>
+
+</section>

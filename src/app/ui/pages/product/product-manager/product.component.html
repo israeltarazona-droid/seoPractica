@@ -1,0 +1,37 @@
+<app-bread-crumb [routing]="routing" [title]="''"></app-bread-crumb>
+<section class="product-container">
+  <h1 class="product-title">Nuestros Productos</h1>
+  <div class="product-grid">
+    <article
+      class="product-card"
+      *ngFor="let product of listProducts"
+      [routerLink]="['/products', product.slug]"
+    >
+      <img
+        *ngIf="product.image"
+        [src]="product.image"
+        [alt]="product.name"
+        class="product-card-image"
+      />
+      <div class="product-card-content">
+        <h2>{{ product.name }}</h2>
+        <p class="description">{{ product.description }}</p>
+        <div class="meta">
+          <span class="price">{{
+            product.price | currency: product.currency
+          }}</span>
+          <span class="rating">⭐ {{ product.rating }}</span>
+        </div>
+        <div
+          class="availability"
+          [ngClass]="{
+            'in-stock': product.availability === 'InStock',
+            'out-stock': product.availability !== 'InStock',
+          }"
+        >
+          {{ product.availability === "InStock" ? "Disponible" : "Agotado" }}
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

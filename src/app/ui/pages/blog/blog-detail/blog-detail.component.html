@@ -1,0 +1,26 @@
+<app-bread-crumb [routing]="routing" [title]="''"></app-bread-crumb>
+<article class="blog-article" *ngIf="article">
+
+  <header class="article-header">
+    <h1>{{ article.title }}</h1>
+
+    <div class="article-meta">
+      <span class="author">Por {{ article.author }}</span>
+      <time [attr.datetime]="article.publishedDate">
+        {{ article.publishedDate }}
+      </time>
+    </div>
+
+    <img
+      *ngIf="article.image"
+      [src]="article.image"
+      [alt]="article.title"
+      class="article-image"
+    />
+  </header>
+
+  <section class="article-content">
+    <p>{{ article.content }}</p>
+  </section>
+
+</article>
